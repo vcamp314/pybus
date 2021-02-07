@@ -8,7 +8,7 @@ setuptools.setup(
     version="0.0.1",
     author="Vitor R Campos",
     author_email="vitorrc314@gmail.com",
-    description="template for future packages",
+    description="simple event bus implementations",
     long_description=long_description,
     long_description_content_type="text/markdown",
     packages=setuptools.find_packages(),
