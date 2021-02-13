@@ -27,12 +27,12 @@ class AsyncBus(Bus):
     example usage:
     >>> import time
     >>> asyncbus = AsyncBus()
-    >>> def subscriber1(*args):
+    >>> def subscriber1(q, *args):
     ...     print('subscriber 1 received event:')
     ...     time.sleep(1)
     ...     print('sub 1: ' + args[0])
     >>> asyncbus.append(subscriber1)
-    >>> def subscriber2(*args):
+    >>> def subscriber2(q, *args):
     ...     print('subscriber 2 received event:')
     ...     print('sub 2: ' + args[0])
     >>> asyncbus.append(subscriber2)
@@ -51,6 +51,6 @@ class AsyncBus(Bus):
         for subscriber in self:
             subscriber_thread = threading.Thread(
                 target=subscriber,
-                args=(*args, kwargs)
+                args=(self.data_queue, *args, kwargs)
             )
             subscriber_thread.start()
