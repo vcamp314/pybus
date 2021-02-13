@@ -18,6 +18,12 @@ class AsyncBus(Bus):
 
     subscribers will trigger asynchronously.
 
+    Attributes
+    ----------
+    # todo: add inter-thread communication functionailty
+    data_queue: asyncio.Queue
+        queue of data for use in providing inter-thread communication
+
     example usage:
     >>> import time
     >>> aysncbus = AsyncBus()
@@ -30,7 +36,7 @@ class AsyncBus(Bus):
     ...     print('subscriber 2 received event:')
     ...     print('sub 2: ' + args[0])
     >>> aysncbus.append(subscriber2)
-    >>> aysncbus('test1')
+    >>> aysncbus('test1') # doctest: +SKIP
     subscriber 1 received event:
     subscriber 2 received event:
     sub 2: test1
