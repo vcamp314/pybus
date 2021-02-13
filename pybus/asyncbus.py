@@ -26,17 +26,17 @@ class AsyncBus(Bus):
 
     example usage:
     >>> import time
-    >>> aysncbus = AsyncBus()
+    >>> asyncbus = AsyncBus()
     >>> def subscriber1(*args):
     ...     print('subscriber 1 received event:')
     ...     time.sleep(1)
     ...     print('sub 1: ' + args[0])
-    >>> aysncbus.append(subscriber1)
+    >>> asyncbus.append(subscriber1)
     >>> def subscriber2(*args):
     ...     print('subscriber 2 received event:')
     ...     print('sub 2: ' + args[0])
-    >>> aysncbus.append(subscriber2)
-    >>> aysncbus('test1') # doctest: +SKIP
+    >>> asyncbus.append(subscriber2)
+    >>> asyncbus('test1') # doctest: +SKIP
     subscriber 1 received event:
     subscriber 2 received event:
     sub 2: test1
