@@ -1,6 +1,10 @@
 """
 This is a very simple implementation of a event bus.
 
+Source:
+Longpoke's post on SO:
+https://stackoverflow.com/questions/1092531/event-system-in-python
+
 """
 
 
